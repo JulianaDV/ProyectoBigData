@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+author: "Simón Caicedo, Juliana Dueñas y Laura Rodríguez"
+date: "5/17/2019"
+output: html_document
+---
+
+/
+Introducción
+/
+
+
+```{r}
+setwd("~/Documents/Big Data")
+
+ratings <- read.csv("google_review_ratings.csv", stringsAsFactors = F)
+
+Data <- read.csv("bots_nonbots_output.csv" , stringsAsFactors = F)
+
+str(ratings)
+str(Data)
+```
+
+
+```{r}
+ratings$Category.11 <- as.numeric(ratings$Category.11, NA)
+
+ratings <- ratings[,-26]
+
+summary(ratings)
+```
